@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackeado</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        #message {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .blinking {
+            animation: blink 1s steps(5, start) infinite;
+        }
+        @keyframes blink {
+            to {
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">
+        <p>Accediendo al sistema...</p>
+        <p>Desencriptando archivos...</p>
+        <p class="blinking">███ ███ ███ ███ ███ ███</p>
+        <p>Hackeo en progreso...</p>
+        <p>¡Advertencia: Brecha de seguridad detectada!</p>
+        <p class="blinking">███████████████████████</p>
+        <p>Iniciando apagado del sistema en 3... 2... 1...</p>
+        <p>¡Es broma! Has sido engañado</p>
+    </div>
+
+    <script>
+        let messages = [
+            "Accediendo al sistema...",
+            "Desencriptando archivos...",
+            "███ ███ ███ ███ ███ ███",
+            "Hackeo en progreso...",
+            "¡Advertencia: Brecha de seguridad detectada!",
+            "Se han extraido todas las contraseñas del dispositivo",
+            "Iniciando apagado del sistema en 3... 2... 1...",
+            "Sigue a @daviid_tudela si eres un verdadero amigo de María y si no quieres ser hackeado de verdad."
+        ];
+
+        let i = 0;
+        function showMessages() {
+            if (i < messages.length) {
+                document.getElementById('message').innerHTML = messages[i];
+                i++;
+                setTimeout(showMessages, 3000);
+            }
+        }
+
+        showMessages();
+    </script>
+
+</body>
+</html>
